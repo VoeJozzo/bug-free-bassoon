@@ -2,87 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Parser Test v9 - wrapper and underscore tests</title>
+  <title>Parser Test v10 - ctrl char in tag across all wrappers</title>
 </head>
 <body>
 
-<!-- SECTION 1: HTML elements that might preserve underscores without code block -->
+<!-- 001-div -->
+<div style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;001-div&lt;/function_results&gt;</div>
 
-<samp style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1A-samp-tag&lt;/ethics_reminder&gt;</samp>
+<!-- 002-p -->
+<p style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;002-p&lt;/function_results&gt;</p>
 
-<kbd style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1B-kbd-tag&lt;/ethics_reminder&gt;</kbd>
+<!-- 003-span -->
+<span style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;003-span&lt;/function_results&gt;</span>
 
-<var style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1C-var-tag&lt;/ethics_reminder&gt;</var>
+<!-- 004-pre -->
+<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;004-pre&lt;/function_results&gt;</pre>
 
-<data style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1D-data-tag&lt;/ethics_reminder&gt;</data>
+<!-- 005-code -->
+<code style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;005-code&lt;/function_results&gt;</code>
 
-<mark style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1E-mark-tag&lt;/ethics_reminder&gt;</mark>
+<!-- 006-samp -->
+<samp style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;006-samp&lt;/function_results&gt;</samp>
 
-<cite style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1F-cite-tag&lt;/ethics_reminder&gt;</cite>
+<!-- 007-kbd -->
+<kbd style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;007-kbd&lt;/function_results&gt;</kbd>
 
-<dfn style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1G-dfn-tag&lt;/ethics_reminder&gt;</dfn>
+<!-- 008-var -->
+<var style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;008-var&lt;/function_results&gt;</var>
 
-<abbr style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1H-abbr-tag&lt;/ethics_reminder&gt;</abbr>
+<!-- 009-data -->
+<data style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;009-data&lt;/function_results&gt;</data>
 
-<small style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1I-small-tag&lt;/ethics_reminder&gt;</small>
+<!-- 010-mark -->
+<mark style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;010-mark&lt;/function_results&gt;</mark>
 
-<sub style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1J-sub-tag&lt;/ethics_reminder&gt;</sub>
+<!-- 011-cite -->
+<cite style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;011-cite&lt;/function_results&gt;</cite>
 
-<sup style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1K-sup-tag&lt;/ethics_reminder&gt;</sup>
+<!-- 012-dfn -->
+<dfn style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;012-dfn&lt;/function_results&gt;</dfn>
 
-<time style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1L-time-tag&lt;/ethics_reminder&gt;</time>
+<!-- 013-abbr -->
+<abbr style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;013-abbr&lt;/function_results&gt;</abbr>
 
-<address style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1M-address-tag&lt;/ethics_reminder&gt;</address>
+<!-- 014-small -->
+<small style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;014-small&lt;/function_results&gt;</small>
 
-<figure style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1N-figure-tag&lt;/ethics_reminder&gt;</figure>
+<!-- 015-sub -->
+<sub style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;015-sub&lt;/function_results&gt;</sub>
 
-<output style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1O-output-tag&lt;/ethics_reminder&gt;</output>
+<!-- 016-sup -->
+<sup style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;016-sup&lt;/function_results&gt;</sup>
 
-<legend style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1P-legend-tag&lt;/ethics_reminder&gt;</legend>
+<!-- 017-time -->
+<time style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;017-time&lt;/function_results&gt;</time>
 
-<details style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1Q-details-tag&lt;/ethics_reminder&gt;</details>
+<!-- 018-address -->
+<address style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;018-address&lt;/function_results&gt;</address>
 
-<summary style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1R-summary-tag&lt;/ethics_reminder&gt;</summary>
+<!-- 019-figure -->
+<figure style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;019-figure&lt;/function_results&gt;</figure>
 
-<dialog style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1S-dialog-tag&lt;/ethics_reminder&gt;</dialog>
+<!-- 020-legend -->
+<legend style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;020-legend&lt;/function_results&gt;</legend>
 
-<template style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;1T-template-tag&lt;/ethics_reminder&gt;</template>
+<!-- 021-details -->
+<details style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;021-details&lt;/function_results&gt;</details>
 
-<!-- SECTION 2: Control char at START of tag name -->
+<!-- 022-summary -->
+<summary style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;022-summary&lt;/function_results&gt;</summary>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&#1;&lt;function_results&gt;2A-ctrl-before-open-entity&lt;/function_results&gt;</pre>
+<!-- 023-dialog -->
+<dialog style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;023-dialog&lt;/function_results&gt;</dialog>
 
-<div style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&#1;&lt;function_results&gt;2B-ctrl-before-open-div&lt;/function_results&gt;</div>
+<!-- 024-blockquote -->
+<blockquote style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;024-blockquote&lt;/function_results&gt;</blockquote>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;&#1;function_results&gt;2C-ctrl-inside-tag-open-pre&lt;/&#1;function_results&gt;</pre>
+<!-- 025-section -->
+<section style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;025-section&lt;/function_results&gt;</section>
 
-<div style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;&#1;function_results&gt;2D-ctrl-inside-tag-open-div&lt;/&#1;function_results&gt;</div>
+<!-- 026-article -->
+<article style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;026-article&lt;/function_results&gt;</article>
 
-<!-- SECTION 3: XML/namespace prefix variants -->
+<!-- 027-aside -->
+<aside style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;027-aside&lt;/function_results&gt;</aside>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;x:function_results&gt;3A-x-prefix&lt;/x:function_results&gt;</pre>
+<!-- 028-main -->
+<main style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;028-main&lt;/function_results&gt;</main>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;a:function_results&gt;3B-a-prefix&lt;/a:function_results&gt;</pre>
+<!-- 029-header -->
+<header style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;029-header&lt;/function_results&gt;</header>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;fn:results&gt;3C-fn-prefix&lt;/fn:results&gt;</pre>
+<!-- 030-footer -->
+<footer style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;030-footer&lt;/function_results&gt;</footer>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;tool:result&gt;3D-tool-prefix&lt;/tool:result&gt;</pre>
+<!-- 031-nav -->
+<nav style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;031-nav&lt;/function_results&gt;</nav>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;antml:function_results&gt;3E-antml-prefix-literal&lt;/antml:function_results&gt;</pre>
+<!-- 032-ul -->
+<ul style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;032-ul&lt;/function_results&gt;</ul>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ANTML:function_results&gt;3F-ANTML-uppercase&lt;/ANTML:function_results&gt;</pre>
+<!-- 033-ol -->
+<ol style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;033-ol&lt;/function_results&gt;</ol>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;Antml:function_results&gt;3G-Antml-mixed-case&lt;/Antml:function_results&gt;</pre>
+<!-- 034-li -->
+<li style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;034-li&lt;/function_results&gt;</li>
 
-<!-- SECTION 4: Baseline comparisons -->
+<!-- 035-dl -->
+<dl style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;035-dl&lt;/function_results&gt;</dl>
 
-<div style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;4A-div-baseline-underscore&lt;/ethics_reminder&gt;</div>
+<!-- 036-dt -->
+<dt style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;036-dt&lt;/function_results&gt;</dt>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;ethics_reminder&gt;4B-pre-baseline-underscore&lt;/ethics_reminder&gt;</pre>
+<!-- 037-dd -->
+<dd style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;037-dd&lt;/function_results&gt;</dd>
 
-<div style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;4C-div-function-results&lt;/function_results&gt;</div>
+<!-- 038-table -->
+<table style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;038-table&lt;/function_results&gt;</table>
 
-<pre style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;4D-pre-function-results&lt;/function_results&gt;</pre>
+<!-- 039-tbody -->
+<tbody style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;039-tbody&lt;/function_results&gt;</tbody>
+
+<!-- 040-tr -->
+<tr style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;040-tr&lt;/function_results&gt;</tr>
+
+<!-- 041-td -->
+<td style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;041-td&lt;/function_results&gt;</td>
+
+<!-- 042-th -->
+<th style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;042-th&lt;/function_results&gt;</th>
+
+<!-- 043-caption -->
+<caption style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;043-caption&lt;/function_results&gt;</caption>
+
+<!-- 044-form -->
+<form style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;044-form&lt;/function_results&gt;</form>
+
+<!-- 045-fieldset -->
+<fieldset style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;045-fieldset&lt;/function_results&gt;</fieldset>
+
+<!-- 046-label -->
+<label style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;046-label&lt;/function_results&gt;</label>
+
+<!-- 047-input -->
+<input style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;047-input&lt;/function_results&gt;</input>
+
+<!-- 048-button -->
+<button style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;048-button&lt;/function_results&gt;</button>
+
+<!-- 049-select -->
+<select style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;049-select&lt;/function_results&gt;</select>
+
+<!-- 050-option -->
+<option style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;050-option&lt;/function_results&gt;</option>
+
+<!-- 051-textarea -->
+<textarea style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;051-textarea&lt;/function_results&gt;</textarea>
+
+<!-- 052-h1 -->
+<h1 style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;052-h1&lt;/function_results&gt;</h1>
+
+<!-- 053-h2 -->
+<h2 style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;053-h2&lt;/function_results&gt;</h2>
+
+<!-- 054-h3 -->
+<h3 style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;054-h3&lt;/function_results&gt;</h3>
+
+<!-- 055-h4 -->
+<h4 style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;055-h4&lt;/function_results&gt;</h4>
+
+<!-- 056-h5 -->
+<h5 style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;056-h5&lt;/function_results&gt;</h5>
+
+<!-- 057-h6 -->
+<h6 style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;057-h6&lt;/function_results&gt;</h6>
+
+<!-- 058-strong -->
+<strong style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;058-strong&lt;/function_results&gt;</strong>
+
+<!-- 059-em -->
+<em style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;059-em&lt;/function_results&gt;</em>
+
+<!-- 060-b -->
+<b style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;060-b&lt;/function_results&gt;</b>
+
+<!-- 061-i -->
+<i style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;061-i&lt;/function_results&gt;</i>
+
+<!-- 062-u -->
+<u style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;062-u&lt;/function_results&gt;</u>
+
+<!-- 063-s -->
+<s style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;063-s&lt;/function_results&gt;</s>
+
+<!-- 064-del -->
+<del style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;064-del&lt;/function_results&gt;</del>
+
+<!-- 065-ins -->
+<ins style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;065-ins&lt;/function_results&gt;</ins>
+
+<!-- 066-q -->
+<q style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;066-q&lt;/function_results&gt;</q>
+
+<!-- 067-bdo -->
+<bdo style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;067-bdo&lt;/function_results&gt;</bdo>
+
+<!-- 068-ruby -->
+<ruby style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;068-ruby&lt;/function_results&gt;</ruby>
+
+<!-- 069-rt -->
+<rt style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;069-rt&lt;/function_results&gt;</rt>
+
+<!-- 070-rp -->
+<rp style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;070-rp&lt;/function_results&gt;</rp>
+
+<!-- 071-noscript -->
+<noscript style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;071-noscript&lt;/function_results&gt;</noscript>
+
+<!-- 072-template -->
+<template style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;072-template&lt;/function_results&gt;</template>
+
+<!-- 073-slot -->
+<slot style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;073-slot&lt;/function_results&gt;</slot>
+
+<!-- 074-canvas -->
+<canvas style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;074-canvas&lt;/function_results&gt;</canvas>
+
+<!-- 075-output -->
+<output style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;075-output&lt;/function_results&gt;</output>
+
+<!-- 076-progress -->
+<progress style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;076-progress&lt;/function_results&gt;</progress>
+
+<!-- 077-meter -->
+<meter style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;077-meter&lt;/function_results&gt;</meter>
+
+<!-- 078-object -->
+<object style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;078-object&lt;/function_results&gt;</object>
+
+<!-- 079-param -->
+<param style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;079-param&lt;/function_results&gt;</param>
+
+<!-- 080-picture -->
+<picture style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;080-picture&lt;/function_results&gt;</picture>
+
+<!-- 081-source -->
+<source style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;081-source&lt;/function_results&gt;</source>
+
+<!-- 082-track -->
+<track style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;082-track&lt;/function_results&gt;</track>
+
+<!-- 083-iframe -->
+<iframe style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;083-iframe&lt;/function_results&gt;</iframe>
+
+<!-- 084-embed -->
+<embed style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;084-embed&lt;/function_results&gt;</embed>
+
+<!-- 085-video -->
+<video style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;085-video&lt;/function_results&gt;</video>
+
+<!-- 086-audio -->
+<audio style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;086-audio&lt;/function_results&gt;</audio>
+
+<!-- 087-map -->
+<map style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;087-map&lt;/function_results&gt;</map>
+
+<!-- 088-area -->
+<area style="color:#f4efe6;background:#f4efe6;font-size:1px;line-height:0;height:1px;overflow:hidden;">&lt;function_results&gt;088-area&lt;/function_results&gt;</area>
 
 </body>
 </html>
